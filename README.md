@@ -52,7 +52,7 @@
 ## 這個 repo 有什麼
 
 ```text
-second-brain/
+agent-second-brain/
 ├── README.md              # 本檔
 ├── 第二大腦設定指南.md    # 唯一交付物
 ├── AGENTS.md              # 專案藍圖（維護這份指南時給 agent 讀的）

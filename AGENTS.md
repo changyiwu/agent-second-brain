@@ -14,7 +14,7 @@
 
 ## 目標與路線圖
 
-- [x] 階段一：從 codex-lazy-packs 抽離成獨立文件（移除 SKILL.md、拿掉章節編號、清除跨 repo 連結）
+- [x] 階段一：從 agent-setup-codex 抽離成獨立文件（移除 SKILL.md、拿掉章節編號、清除跨 repo 連結）
 - [x] 階段二：改寫為通用版 v1.0（引入 `<AGENT_HOME>`／`<AGENT_RULES_FILE>` 佔位符與對照表）
 - [x] 階段三：五個資料夾改用數字前綴命名，解決 Obsidian 側邊欄排序分散問題
 - [x] 階段四：套用到實際 vault（`2ndbrain`），同步四個 agent 的全域設定
@@ -28,7 +28,7 @@
 ## 資料夾結構
 
 ```text
-second-brain/
+agent-second-brain/
 ├── README.md              # repo 門面：對外說明指南是什麼、怎麼用
 ├── AGENTS.md              # 本檔：專案藍圖
 ├── CLAUDE.md              # 橋接檔：@AGENTS.md，供有 CLAUDE.md 時只讀 CLAUDE.md 的 Claude Code 使用
@@ -43,8 +43,8 @@ second-brain/
 | 層級 | 平台 | 位置 | 讀取時機 |
 |------|------|------|---------|
 | L1 | 本地（GDrive） | `AGENTS.md`＋`handoff.md` | 每個 session |
-| L2 | GitHub | changyiwu/second-brain（**公開**） | 指定時 |
-| L3 | Obsidian | `second-brain/專案工作流程.md` | 有需要時 |
+| L2 | GitHub | changyiwu/agent-second-brain（**公開**） | 指定時 |
+| L3 | Obsidian | `agent-second-brain/專案工作流程.md` | 有需要時 |
 
 ## 相關位置
 
@@ -87,7 +87,7 @@ second-brain/
 - **repo 是公開的。** 任何寫進 commit 的內容都是對外發布。不要放個人資料、實際檔案路徑以外的隱私資訊、或任何憑證。
 - **git 作者 email 固定用 `changyiwu@users.noreply.github.com`**，不要用真實 email。2026-08-06 起改設在這台電腦的**全域** config（`~/.gitconfig`），本專案不再有 local 覆寫；換電腦時記得確認該機全域值，用 `git config --show-origin --get user.email` 查實際生效的來源。
 
-- **不加跨 repo 連結。** 這份指南必須能獨立執行；曾因為指向 `codex-lazy-packs` 而產生死連結（見指南內「踩坑 1」）。
+- **不加跨 repo 連結。** 這份指南必須能獨立執行；曾因為指向 `agent-setup-codex` 而產生死連結（見指南內「踩坑 1」）。
 - **不綁定特定 agent。** 工具差異一律用佔位符＋對照表處理，不寫死某一家的路徑或功能名稱。
 - **不確定的事實不要寫進對照表。** 規則檔放錯位置不會報錯、只會安靜失效，寫錯比留白更糟（見指南內「踩坑 5」）。
 - **規則只維護一份，其他檔名一律做橋接檔。** 橋接檔只放 import／指路，不複製規則內容，否則兩份必然分叉（見指南內「踩坑 6、7」）。
